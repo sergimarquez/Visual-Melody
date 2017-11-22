@@ -6,12 +6,31 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/paperscript" canvas="myCanvas">
+
+	var circles = [];
+
+	//When a key is pressed, a new circle is created and pushed inside the array
 	function onKeyDown(event) {
-	var maxPoint = new Point(view.size.width, view.size.height);
-	var randomPoint = Point.random();
-	var point = maxPoint * randomPoint;
-	new Path.Circle(point, 10).fillColor = "blue";
+		var maxPoint = new Point(view.size.width, view.size.height);
+		var randomPoint = Point.random();
+		var point = maxPoint * randomPoint;
+		var newCircle = new Path.Circle(point, 500);
+		newCircle.fillColor = "blue";
+		circles.push(newCircle);
 	}
+
+	//Loop through the array circles and animate them
+
+	function onFrame(event){
+		for(var i = 0; i < circles.length; i++){
+			//Animates the color inside circle
+			circles[i].fillColor.hue +=1;
+			//Down sizes the circle
+			circles[i].scale(.9);
+		}
+	}
+
+
 
 	</script>
 

@@ -8,3 +8,29 @@ body, html {
 	height: 100%;
 	margin: auto;
 }
+
+p {
+	font-size: 15px;
+	color: #999;
+	margin-top: 15px;
+}
+
+.instruction-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right: 0;
+}
+
+.instruction-item {
+  max-width: 50%;
+  color: #f1c40f;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+
